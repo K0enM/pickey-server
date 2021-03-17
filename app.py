@@ -6,7 +6,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config.from_object(os.getenv('APP_SETTINGS'))
-print(os.getenv['APP_SETTINGS'])
+print(os.getenv('APP_SETTINGS'))
 
 @app.route('/')
 def hello():
