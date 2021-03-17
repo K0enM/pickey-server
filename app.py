@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -28,9 +28,9 @@ class Hanger(db.Model):
 def hello():
   return 'Hello World!'
 
-@app.route('/<name>')
-def hello_name(name):
-  return "Hello {}!".format(name)
+@app.route('/hangers')
+def all_hangers():
+  return jsonify(db.session.query(Hanger))
 
 if __name__ == '__main__':
   app.run()
