@@ -14,6 +14,7 @@ flask-migrate = "*"
 psycopg2 = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"
